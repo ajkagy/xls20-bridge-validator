@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "fs": "^0.0.1-security",
+    "sqlite3": "^5.0.2",
+    "web3": "^1.7.0",
+    "web3-eth": "^1.7.0",
+    "web3-eth-contract": "^1.7.0",
+    "ws": "^8.4.2",
+    "xrpl": "^2.1.1"
+  }
+}
