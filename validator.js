@@ -67,6 +67,12 @@ const offerResponseSignPayload = {
   signMessage: {},
 };
 
+const responsePing = {
+  type: "Response",
+  command: "Ping",
+  validator: process.env.VALIDATOR_NUMBER,
+};
+
 var reconnectInterval = 1000 * 5;
 var connect = function () {
   ws = new WebSocket(process.env.MAIN_SERVER, {
@@ -88,6 +94,9 @@ var connect = function () {
   ws.on("message", async (e) => {
     try {
       var request = JSON.parse(Buffer.from(e).toString("utf8"));
+      if (request.command == "Ping") {
+        await ws.send(JSON.stringify(responsePing));
+      }
       if (request.command == "SignMessageConfirmed") {
         storage.updateSigned(
           db,
