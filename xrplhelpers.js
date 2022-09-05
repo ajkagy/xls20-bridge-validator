@@ -75,7 +75,7 @@ class XrplHelpers {
     return {
       TransactionType: "NFTokenCreateOffer",
       Account: process.env.MULTI_SIG_WALLET_ADDRESS,
-      TokenID: "",
+      NFTokenID: "",
       Destination: "",
       Amount: "0",
       Flags: xrpl.NFTokenCreateOfferFlags.tfSellToken,
@@ -97,7 +97,7 @@ class XrplHelpers {
       Account: process.env.MULTI_SIG_WALLET_ADDRESS,
       Flags: xrpl.NFTokenMintFlags.tfTransferable,
       URI: "",
-      TokenTaxon: 0,
+      NFTokenTaxon: 0,
       Fee: "1000",
       Sequence: 0,
       Memos: [
