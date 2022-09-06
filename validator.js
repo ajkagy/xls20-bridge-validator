@@ -241,6 +241,7 @@ async function CreateOffer(response) {
         payload.xrplAddress = response.xrplAddress;
         payload.xrplTokenId = result.account_nfts[i].NFTokenID;
         payload.signMessage = signedMessage.tx_blob;
+        console.log(payload);
         ws.send(JSON.stringify(payload));
         break;
       }
