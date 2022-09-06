@@ -210,7 +210,6 @@ async function main() {
 async function CreateOffer(response) {
   try {
     const result = await xrplHelpers.getAccountNFTs();
-    console.log(result)
     for (i = 0; i < result.account_nfts.length; i++) {
       if (
         xrpl.convertHexToString(result.account_nfts[i].URI) == response.tokenUri
@@ -240,7 +239,7 @@ async function CreateOffer(response) {
         payload.contractAddress = response.contractAddress;
         payload.tokenId = response.tokenId;
         payload.xrplAddress = response.xrplAddress;
-        payload.xrplTokenId = result.account_nfts[i].TokenID;
+        payload.xrplTokenId = result.account_nfts[i].NFTokenID;
         payload.signMessage = signedMessage.tx_blob;
         ws.send(JSON.stringify(payload));
         break;
