@@ -78,7 +78,7 @@ class XrplHelpers {
       NFTokenID: "",
       Destination: "",
       Amount: "0",
-      Flags: xrpl.NFTokenCreateOfferFlags.tfSellToken,
+      Flags: xrpl.NFTokenCreateOfferFlags.tfSellNFToken,
       Sequence: 0,
       Fee: "1000",
       Memos: [
