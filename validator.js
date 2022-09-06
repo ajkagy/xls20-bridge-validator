@@ -210,6 +210,7 @@ async function main() {
 async function CreateOffer(response) {
   try {
     const result = await xrplHelpers.getAccountNFTs();
+    console.log(result)
     for (i = 0; i < result.account_nfts.length; i++) {
       if (
         xrpl.convertHexToString(result.account_nfts[i].URI) == response.tokenUri
