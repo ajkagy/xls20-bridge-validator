@@ -216,7 +216,7 @@ async function CreateOffer(response) {
       ) {
         const client = new xrpl.Client(process.env.XRPL_RPC);
         var offerPayload = xrplHelpers.CreateOfferPayload();
-        offerPayload.TokenID = result.account_nfts[i].TokenID;
+        offerPayload.NFTokenID = result.account_nfts[i].NFTokenID;
         offerPayload.Destination = response.xrplAddress;
         offerPayload.Sequence = await xrplHelpers.getNextSequence();
         let memoData;
